@@ -1,0 +1,46 @@
+<!-- Lo que hacemos en este momento, es crear la pantalla donde vamos a trabajar en el proximo video. 2 columnas, personajes, 2 input y el boton de agregar, notar que usando <hr/> podemos hacer una separacion bastante bonita. -->
+<h1>Dragon Ball Z</h1>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <!-- Al llamar a nuestro componente lo que hacemos es igualar el nombre que le dimos en el input a la variable que nosotros queremos mandar, en este caso el array 'personajes'. -->
+
+    <!-- Desde este componente lo que hacemos es enviar -->
+    <!-- <app-personajes [personajes]="personajes"/>    -->
+    <app-personajes></app-personajes>
+    <!-- De esta forma lo que hacemos es recibir el evento de el hijo app-agregar, para realizar el proceso "agregarNuevoPersonaje($event)" siempre recordar agregar el event. -->
+    <app-agregar [nuevo]="nuevo"></app-agregar>
+    <!-- (onNuevoPersonaje)="agregarNuevoPersonaje($event)" -->
+    <!-- <h3>Personajes</h3>
+    <hr /> -->
+    <!-- Ahora procedemos a crear un ngFor para mostrar los personajes que vamos almacenando en nuestro array de personajes. Notese que en el poder, agregamos un 'pipe' que lo que hace es que nos agrega una coma en nuestro numero, es un cambio visual a nuestro html-->
+    <!-- <ul>
+      <li *ngFor="let personaje of personajes">
+        {{ personaje.nombre }}--{{ personaje.poder | number }}
+      </li>
+    </ul> -->
+  </div>
+  <div class="col">
+    <!-- <h3>Agregar</h3>
+    <hr /> -->
+    <!-- Agregamos a nuestro form, el ngSubmit, que nos brinda angular, para prevenir que cuando toquemos el boton, la pagina se refresque, simplemente se ejecuta la funcion que nosotros asignamos al form. Para poder usarlo explicamos mas en detalle en el dbz.module.ts -->
+    <!-- <form (ngSubmit)="agregar()"> -->
+    <!-- Procedemos a crear nuestro primer input funcional, como podemos ver, debemos nombrarlo para luego utilizar el ngModel, veamos que va entre corchetes y llaves. A esto lo igualamos a la propiedad que querramos re valorar o llenar. (el v-model de angular.) -->
+    <!-- Tambien creamos en nuestra pagina de componentes el objeto donde vamos almacenar la informacion. -->
+    <!-- <input
+        type="text"
+        placeholder="Nombre"
+        name="nombre"
+        [(ngModel)]="nuevo.nombre"
+      />
+      <input
+        type="number"
+        placeholder="Poder"
+        name="numero"
+        [(ngModel)]="nuevo.poder"
+      />
+      <button type="submit">Agregar</button>
+    </form> -->
+  </div>
+</div>

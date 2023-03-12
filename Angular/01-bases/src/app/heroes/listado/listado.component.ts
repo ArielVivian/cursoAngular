@@ -15,8 +15,12 @@ export class ListadoComponent {
     'thor',
     'capitan america',
   ];
-
+  //Creamos una variable bandera para mostrar o no la seccion de html que contiene a los heroes borrados, para de este modo si no hay ningun heroe aun, no se muestre nada. entonces si la propiedad es falsa, no se muestra, cuando nosotros activamos la funcion que borra un heroe, tambien hacemos que esta variable pase a ser true con this.isBorrado=true entonces la seccion de html pasa a ser visible.
+  isBorrado: boolean = false;
+  //Creamos una variable donde almacenar a nuestro heroe borrado, para ir mostrandolo en nuestro html.
   heroeBorrado: string = '';
+  //Creamos un array donde almacenamos nuestros heroes borrador, para hacer otra *ngFor para ir viendolos.
+  heroesBorrados: string[] = [];
   //Despues de mostrar nuestro array en una lista ordenada, lo que hacemos es crear 2 botones para ir quitando items del array, uno usando el metodo shift y el otro splice.
   //EL metodo shift lo que hace es eliminar el primer item de cada array hasta que quede vacio.
   borrarHeroeShif() {
@@ -28,7 +32,11 @@ export class ListadoComponent {
   }
   //Esta tambien es una forma de aislar elemento en un array, por ejemplo de la siguiente manera.
   //Asi lo que hacemos es asignar a una variable el item que aislamos, para luego hacer con el lo que querramos, sumarlo a otro array, mostrarlo en pantalla, etc.
+  //Ahora lo que hacemos es asignar el valor a una variable, y hay que tener atencion a la parte de el or al final, porque puede que nos de un error de que esta devolviendo undefined, de esta forma nos aseguramos que recibimos bien el dato.
   borrarHeroeEjemplo() {
     this.heroeBorrado = this.heroes.shift() || '';
+    this.isBorrado = true;
+    //En esta linea lo que hacemos es pushear el heroe borrado a un array donde los guardamos, para ir mostrandolo en nuestro html en la linea 9 con *ngFor.
+    this.heroesBorrados.push(this.heroeBorrado);
   }
 }

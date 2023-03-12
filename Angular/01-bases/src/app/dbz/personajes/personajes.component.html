@@ -1,0 +1,8 @@
+<!-- Procedemos a crear nuestro primer componente chiquito, que en este caso es crear el que genera la lista de personajes, Creamos una carpeta que se llama personaje que contiene los 2 archivos, este y el del typeScript. -->
+<h3>Personajes</h3>
+<hr />
+<ul>
+  <li *ngFor="let personaje of personajes">
+    {{ personaje.nombre }}--{{ personaje.poder | number }}
+  </li>
+</ul>

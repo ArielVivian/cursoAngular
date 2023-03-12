@@ -1,10 +1,21 @@
 <p>Listado de heroes</p>
+<!-- Creamos un else, como podemos ver, lo hacemos en el mismo if y se crea una variable local del html que la tiene en cuenta el ng-template de abajo, simplemente los hermanamos con el #noBorrado, que seria nuestra variable bandera local. -->
+<div *ngIf="isBorrado; else noBorrado">
+  <p>HEROES BORRADOS</p>
+  <span>{{ heroeBorrado }}</span>
+</div>
+<ng-template #noBorrado>
+  <p>NO AH BORRADO NADA.</p>
+</ng-template>
 
+<ul>
+  <li *ngFor="let heroeb of heroesBorrados; let i = index">
+    {{ i + 1 }} - {{ heroeb }}
+  </li>
+</ul>
 <ul>
   <li *ngFor="let heroe of heroes; let i = index">{{ i + 1 }} - {{ heroe }}</li>
 </ul>
-
-<p>{{ heroeBorrado }}</p>
 
 <button (click)="borrarHeroe()">Borrar heroe</button>
 <button (click)="borrarHeroeShif()">Borrar heroe</button>
