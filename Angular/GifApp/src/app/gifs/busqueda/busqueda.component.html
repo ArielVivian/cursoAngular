@@ -1,0 +1,9 @@
+<h5>Buscar:</h5>
+<!-- Utilizamos el tag keyup.enter para que al hacer enter el usuario se envie la informacion y se ejecute el buscar. por ultimo agregamos el tag txt que nos enlaza al viewchild, para poder resetear y almacenar este input, para que cuando enviemos el campo, este se reinicie. -->
+<input
+  type="text"
+  class="form-control"
+  placeholder="Buscar gifs....."
+  (keyup.enter)="buscar()"
+  #txtBuscar
+/>
