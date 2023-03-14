@@ -3,6 +3,13 @@
   <hr class="text-white" />
 
   <div class="list-group list-reset">
-    <a href="#" class="list-group-item list-group-item-action"> Dashboard </a>
+    <a
+      *ngFor="let item of historial"
+      href="#"
+      class="list-group-item list-group-item-action"
+    >
+      <!-- Usamos un pipe en este caso, por el motivo que desde nuestro service estamos convirtiendo todo a minuscula, con este pipe lo que hacemos es que tenga siempre letra capitalizada al principio de cada palabra. -->
+      {{item |titlecase }}
+    </a>
   </div>
 </div>
