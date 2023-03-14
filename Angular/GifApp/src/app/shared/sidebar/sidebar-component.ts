@@ -12,6 +12,12 @@ export class SidebarComponent {
   get historial() {
     return this.gifsService.historial;
   }
+
   //El constructor es fundamental, ya que de aca es de donde llamamos al parametro/objeto/array, lo que sea.
   constructor(private gifsService: GifsService) {}
+
+  //Creamos esta funcion para poder llamar a los gifs desde nuestro historial, haciendole click encima, lo que hace es que igual nuestra variable local termino a la variable query que tenemos en services.
+  buscar(termino: string) {
+    this.gifsService.buscarGifs(termino);
+  }
 }
