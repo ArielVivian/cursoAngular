@@ -1,0 +1,20 @@
+<h2>Busquedas</h2>
+<hr />
+<ul class="list-group">
+  <!-- Como podemos ver, para poder enlazar cada item de la lista a su ruta configurada, lo que hacemos es usar el tag routerLink, y cada texto que tenga entre las comillas sera el que nosotros le asignaramos en el string de nuestras rutas en el app-routing.module al nosotros moverlo a nuestro componente shared/sidebar, lo que hacemos importamos tambien el AppRoutingModule tambien aca, para darle toda la funcionalidad.-->
+  <!-- Agregamos el routerlinkactive para que al tocar ese boton, se resalta, le da la clase que nosotros especifiquemos. por ultimo, como no tenemos una ruta exacta en pais, le tenemos que agregar el routerlinkACtive. -->
+  <li
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="list-group-item"
+  >
+    Buscar pais
+  </li>
+  <li routerLink="region" routerLinkActive="active" class="list-group-item">
+    Por region
+  </li>
+  <li routerLink="capital" routerLinkActive="active" class="list-group-item">
+    Por capital
+  </li>
+</ul>
