@@ -1,9 +1,12 @@
+<!-- Ahora al traer el input a un componente separado, nos tenemos que enfocar, en mandarle de alguna forma una senial de que queremos buscar algun pais, eso lo hacemos con el submit comun que tenemos ahi, que hace nuestra funcion buscar, sigo en el ts de este componente. -->
+<!-- Lo que hacemos en el input, es decir que cada tecla que se presione active una busqueda, es para la busqueda mientras nosotros tipeamos. -->
 <form (ngSubmit)="buscar()" autocomplete="off">
   <input
     type="text"
     name="termino"
     class="form-control"
     [(ngModel)]="termino"
-    placeholder="Buscar pais......"
+    (input)="teclaPresionada()"
+    [placeholder]="placeholder"
   />
 </form>

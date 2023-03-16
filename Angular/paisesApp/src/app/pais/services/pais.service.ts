@@ -19,4 +19,14 @@ export class PaisService {
     return this.http.get<Country[]>(url);
     //Luego nos vamos a por pais.ts a poder utilizar este metodo.
   }
+  //Misma funcion que buscar pais, pero buscamos pais por capital en lugar de por nombre.
+  buscarCapital(termino: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/capital/${termino}`;
+    return this.http.get<Country[]>(url);
+  }
+  //Creamos la funcion que nos monta el url correspondiente a un pais individual, como podemos ver, cambiams el string alpha y en lugar de termino enviamos el id. Aparte le sacamos los corchetes a country, ya que en lugar de devolver un array de paises, lo que hace es devolvernos un solo country.
+  getPaisPorAlpha(id: string): Observable<Country> {
+    const url = `${this.apiUrl}/alpha/${id}`;
+    return this.http.get<Country>(url);
+  }
 }

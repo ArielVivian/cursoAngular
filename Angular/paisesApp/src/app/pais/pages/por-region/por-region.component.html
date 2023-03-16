@@ -1,1 +1,18 @@
-<p>por-region works!</p>
+<h3>
+  Buscar por region<small>: {{ regionActiva | titlecase }}</small>
+</h3>
+<hr />
+
+<!-- [class.btn-primary]="region === regionActiva" -->
+<!-- Podemos ver una buena practica para aplicar clases a botones, que aplica segun esta activa o no mediante el metodo getclaseCSS, cuando la region es diferente el css cambia. en componente.ts vemos la funcion. -->
+<div class="row">
+  <div class="col">
+    <button
+      *ngFor="let region of regiones"
+      [class]="getClaseCSS(region)"
+      (click)="activarRegion(region)"
+    >
+      {{ region | titlecase }}
+    </button>
+  </div>
+</div>
