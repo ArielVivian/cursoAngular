@@ -1,0 +1,26 @@
+<!-- introduccion a pipes de angular. -->
+<!-- La base pricipal de utilizar pipes en angular, es el hecho de que modifican la estructura que vemos los datos, pero no el dato en si. -->
+
+<!-- <div class="text-layout">
+  <h1>{{ nombre | titlecase }}</h1>
+  <h1>{{ valor | number }}</h1>
+  <h1>{{ obj | json }}</h1>
+</div> -->
+
+<!-- <button (click)="(mostrarNombre)">Cambiar nombre</button> -->
+<!-- <p-button
+  (click)="(mostrarNombre)"
+  styleClass="p-button-raised p-button-help"
+  label="Cambiar Nombre"
+  icon="pi pi-check"
+  iconPos="right"
+></p-button> -->
+<!-- como podemos ver, podemos utilizar pipes dentro de nuestro css ya armado desde primeng, para poder llamar una variable a ese header, como vemos, la ponemos dentro de llaves cuadradas, para decirle que ahi va a ir una propiedad o contenido asociado a una variable. Los pipes en esos casos, son perfectamente utilizables. Por el resto de cosas, PrimeNg es bastante similar a lo que estabamos unsando en nuxt. -->
+<!-- <p-card [header]="nombre | titlecase"></p-card> -->
+<link rel="stylesheet" href="https://unpkg.com/primeflex@3.0.0/primeflex.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/primeflex@3.0.0/themes/vela-blue.css"
+/>
+<app-menu></app-menu>
+<router-outlet></router-outlet>
