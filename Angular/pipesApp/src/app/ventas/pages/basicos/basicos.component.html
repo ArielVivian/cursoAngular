@@ -2,6 +2,7 @@
   <h1>Pipes Basicos</h1>
   <p>Pipes incluidos en Angular - Usualmente en el Common Module.</p>
 </div>
+<hr />
 <div class="grid">
   <div class="col">
     <p-card header="upercasse" [subheader]="nombreLower">
@@ -34,6 +35,12 @@
         <li>fecha comun/date="MMMM" Custom</li>
         <li>fecha comun/date="MMMM dd, yyyy" Custom</li>
       </ul>
+      <hr />
+      <ul>
+        <li>fecha comun/date="long" : "GMT-6"</li>
+        <li>fecha comun/date="long" : "GMT-4"</li>
+        <li>fecha | date : "long" : "" : "fr"</li>
+      </ul>
     </p-card>
   </div>
   <div class="col">
@@ -45,6 +52,12 @@
         <li>{{ fecha | date : "long" }}</li>
         <li>{{ fecha | date : "MMMM" }}</li>
         <li>{{ fecha | date : "MMMM dd, yyyy" }}</li>
+      </ul>
+      <hr />
+      <ul>
+        <li>{{ fecha | date : "long" : "GMT-6" }}</li>
+        <li>{{ fecha | date : "long" : "GMT-4" }}</li>
+        <li>{{ fecha | date : "long" : "" : "fr" }}</li>
       </ul>
     </p-card>
   </div>
