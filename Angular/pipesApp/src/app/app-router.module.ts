@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { RouterModule, Routes } from '@angular/router';
 import { NumerosComponent } from './ventas/pages/numeros/numeros.component';
 import { BasicosComponent } from './ventas/pages/basicos/basicos.component';
