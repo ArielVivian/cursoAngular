@@ -15,6 +15,7 @@ imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
