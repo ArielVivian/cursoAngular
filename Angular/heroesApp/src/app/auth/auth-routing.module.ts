@@ -1,26 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { RegistroComponent } from './pages/registro/registro.component';
+import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { RegisterPageComponent } from './pages/register-page/register-page.component';
 
 const routes: Routes = [
     {
-        path: '',
-        children:[
-            {
-                path: 'login',
-                component: LoginComponent
-            },
-            {
-                path: 'registro',
-                component: RegistroComponent
-            },
-            {
-                path: '**',
-                redirectTo: 'login'
-            },
-        ]
+       path: '',
+       component: LayoutPageComponent,
+       children: [
+        {
+            path: 'login',
+            component: LoginPageComponent
+
+        },
+        {
+            path: 'new-account',
+            component: RegisterPageComponent
+
+        },
+        {
+            path: '**',
+            redirectTo:'login'
+
+        },
+       ]
     }
 ]
 
