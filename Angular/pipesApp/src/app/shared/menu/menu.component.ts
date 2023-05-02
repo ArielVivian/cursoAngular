@@ -36,6 +36,7 @@ export class MenuComponent {
       {
         label: 'Pipes personalizados',
         icon: 'pi pi-cog',
+        routerLink:'ordenar'
       },
     ];
   }

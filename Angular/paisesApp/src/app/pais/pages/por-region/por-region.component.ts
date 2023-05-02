@@ -16,6 +16,7 @@ export class PorRegionComponent {
   regionActiva: string = '';
 
   getClaseCSS(region: string): string {
+    //como podemos ver, retornamos que si region es === a regionActiva nos devuelva unas clases y en caso contrario, otra.
     return region === this.regionActiva
       ? 'btn btn-primary'
       : 'btn btn-outline-primary';

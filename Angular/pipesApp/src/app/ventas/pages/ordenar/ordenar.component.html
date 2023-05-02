@@ -1,1 +1,96 @@
-<p>ordenar works!</p>
+<!-- Procedemos a crear nuestro primer pipe personalizado, el cual es cambiar una palabra de mayusculas a minusculas, o viceversa, para esto tenemos que crear un pipe en nuestra carpeta local de ventas/pipes, ya que se va a usar solo aqui, si fuera para toda nuestra app, la deberiamos crear en nuestra carpeta app/shared/pipes -->
+<div class="text-layout">
+    <h1>Pipes personalizados</h1>
+    <hr />
+    <!-- Como podemos ver, simplemente agregamos el pipe y le damos el nombre que nosotros creamos en la carpeta pipes, de esta forma lo llamamos, en este caso le agregamos una caractertica extra que es booleana, asociada a una variable que cambia con el boton de abajo, para que la palabra cambie a la opuesta de la que este activa. -->
+    <p>Pipes creados por {{'nosotros' | mayusculas:enMayusculas }} mismos.</p>
+  
+  </div>
+
+  
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+       
+        
+    </div>
+    <div class="p-toolbar-group-end">
+        <button 
+                pButton
+                label="toggle Mayusculas"
+                (click)="cambiar()"
+                class="mr-1">
+        </button>
+        <button 
+                pButton
+                icon="pi pi-sort"
+                label="Por nombre"
+                class="mr-1"
+                (click)="cambiarOrden('nombre')"
+                >
+                
+        </button>
+        <button 
+                pButton
+                icon="pi pi-sort"
+                label="Vuela"
+                class="mr-1 p-button-warning"
+                (click)="cambiarOrden('vuela')"
+                >
+        </button>
+        <button 
+                pButton
+                icon="pi pi-sort"
+                label="Por color"
+                class="mr-1 p-button-succes"
+                (click)="cambiarOrden('color')"
+                >
+        </button>
+        
+    </div>
+</p-toolbar>
+
+<div class="p-grid">
+    <div class="p-col mt-2">
+        
+<p-table [value]="heroes | ordenar:ordenarPor" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Vuela</th>
+            <th>Color</th>           
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-heroe>
+        <tr>
+            <td>{{ heroe.nombre }}</td>
+            <td>{{ heroe.vuela | vuela | titlecase}}</td>
+            <td>{{ heroe.color }}</td>            
+        </tr>
+    </ng-template>
+</p-table>
+
+    </div>
+</div>
+
+
+<div class="p-grid">
+    <div class="p-col mt-2">        
+<p-table [value]="heroes" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+        <tr>
+            <th>Nombre</th>
+            <th>Vuela</th>
+            <th>Color</th>           
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-heroe>
+        <tr>
+            <td>{{ heroe.nombre }}</td>
+            <td>{{ heroe.vuela | vuela | titlecase}}</td>
+            <td>{{ heroe.color }}</td>            
+        </tr>
+    </ng-template>
+</p-table>
+
+    </div>
+</div>
